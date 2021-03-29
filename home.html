@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PILOMEX Perforaciones profundas</title>
+    <meta name="description" content="PILOMEX fue fundada en 2017 con el propósito de suministrar soluciones y servicio innovadores a través de la ingeniería civil, ingeniería química, y geofísica, contribuyendo con nuestros clientes a su competitividad y rentabilidad
+    por medio del servicio y soluciones únicas para sus proyectos y procesos constructivos.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Google fonts - Montserrat for headings, Cardo for copy-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Cardo:400,400italic,700">
+    <!-- Lightbox-->
+    <link rel="stylesheet" href="vendor/lightbox2/css/lightbox.min.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/fabicon.png">
+    <!-- Leaflet CSS - For the map-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
+    <!-- Tweaks for older IEs-->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+
+<body>
+    <!-- intro end-->
+    <!-- navbar-->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a href="#intro" class="navbar-brand link-scroll"><img src="img/logo.png" alt="" class="img-fluid"></a>
+                <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+                <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a href="#about" class="nav-link link-scroll">Nosotros </a></li>
+                        <li class="nav-item"><a href="#services" class="nav-link link-scroll">Servicios</a></li>
+                        <li class="nav-item"><a href="#portfolio" class="nav-link link-scroll">Portafolio</a></li>
+                        <li class="nav-item"><a href="#text" class="nav-link link-scroll">Más</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link link-scroll">Contacto</a></li>
+                        <li class="nav-item"><a href="#contact" class="btn btn-outline-white nav-link ">Iniciar sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Services-->
+    <section id="services" style="background-color: #eee">
+        <div class="container">
+            <div class="row services">
+                <div class="col-lg-12">
+                    <h2 class="heading">Formularios</h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="box">
+                                <div class="icon"><img src="https://img.icons8.com/material-rounded/48/000000/fine-print.png" /></div>
+                                <h5>ANÁLISIS DE CONTAMINANTES Y RESIDUOS</h5>
+                                <p>Te asesoramos , analizamos y damos solucion a los proyectos en los que cuentes con presuntos suelos contaminados, bajo certificacion EMA.</p>
+                                <input type="button" class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#ema" value="Leer más">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="box">
+                                <div class="icon"><img src="https://img.icons8.com/material-rounded/48/000000/hand-planting.png" /></div>
+                                <h5>Manifestación de impacto ambiental</h5>
+                                <p>En el identificamos los efectos que puede ocasionar una obra o actividad sobre el medio ambiente señalando las medidas preventivas.<br><br></p>
+                                <input type="button" class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#mia" value="Leer más">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="box">
+                                <div class="icon"><img src="https://img.icons8.com/material-rounded/48/000000/green-earth.png" /></div>
+                                <h5>Estudios de mecánica de suelos</h5>
+                                <p>Determinamos de la resistencia del terreno y te ofrecemos una propuesta adecuada de cimentación a usar según tu proyecto.<br><br></p>
+                                <input type="button" class="btn btn-outline-primary btn-block" type="button" data-toggle="modal" data-target="#ems" value="Leer más">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services end-->
+    <!-- contact-->
+    <section id="contact" style="background-color: #fff;" class="text-page pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="heading">RESISTENCIA DE CONCRETOS</h2>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <form id="contact-form" action="contact_process.php" method="post" class="contact-form">
+                                <div class="controls">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="name">Nombre *</label>
+                                                <input type="text" id="name" name="name" placeholder="Ingrese su nombre completo" required="required" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="company">Empresa *</label>
+                                                <input type="text" id="company" name="company" placeholder="Ingrese el nombre de su empresa" required="required" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="number">Número telefónico </label>
+                                                <input type="tel" id="number" name="number" placeholder="Ingrese su número telefónico" required="required" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Correo electronico *</label>
+                                        <input type="email" id="email" name="email" placeholder="Ingrese su email" required="required" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message">Su mensaje para nosotros *</label>
+                                        <textarea rows="4" name="message" id="message" placeholder="Ingrese su mensaje" required="required" class="form-control"></textarea>
+                                    </div>
+                                    <div class="text-center">
+                                        <input type="submit" value="Enviar mensaje" class="btn btn-outline-primary btn-block">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-6">
+                            <p>Si tienes alguna pregunta acerca de nuestros servicios por favor rellena el siguiente formulario y en breve nos pondremos en contacto contigo. </p>
+                            <p>También nos puedes llamar en horarios de oficina 8:00 -19:00</p>
+                            <p>
+                                <a href="+52015979775601"><img src="https://img.icons8.com/material/24/000000/phone--v1.png" /> 01 597 977 5601</a>
+                            </p>
+                            <p>
+                                <a href="https://api.whatsapp.com/send?phone=525548183820&text=Me%20interesa%20saber%20mas%20de%20los%20servicios%20de%20PILOMEX&source=&data=&app_absent="><img src="https://img.icons8.com/material/24/000000/whatsapp--v1.png" /> +52 554818 38 20</a>
+                            </p>
+                            <p><strong>!No dudes en contactarnos! </strong></p>
+                            <p class="social"><a href="https://www.facebook.com/pilomexlab/" title="Pilomex Facebook" class="facebook"><i class="fa fa-facebook"></i></a><a href="https://www.instagram.com/acpilomex/" title="Pilomex Instagram" class="instagram"><i class="fa fa-instagram"></i></a>
+                                <a href="mailto:acpilomex@gmail.com" title="Correo Pilomex" class="email"><i class="fa fa-envelope"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="map"></div>
+    <a href="https://api.whatsapp.com/send?phone=525548183820&text=Hola!%20me%20podrian%20dar%20más%20informacion%20de%20sus%20servicios" class="appWhatsapp">
+        <img src="img/whatsapp.png" alt="Whatsapp">
+    </a>
+    <footer style="background-color: #111;">
+        <div class="container">
+            <div class="row copyright">
+                <div class="col-md-6">
+                    <p class="mb-md-0 text-center text-md-left">&copy;2020 PILOMEX</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="credit mb-md-0 text-center text-md-right">Template by <a href="https://bootstrapious.com/p/how-to-build-a-working-bootstrap-contact-form">Bootstrapious</a> & readapted by <a href="https://www.taquitosoftware.com.mx">Taquito Software</p>
+                    <!-- Please do not remove the backlink to us. It is part of the licence conditions. Thanks for understanding :)-->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- JavaScript files-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js">
+    </script>
+    <script src="vendor/lightbox2/js/lightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js">
+    </script>
+    <script src="js/front.js"></script>
+
+</body>
+
+</html>
