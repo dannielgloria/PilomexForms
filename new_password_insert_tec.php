@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -37,46 +38,76 @@
     <header class="header">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a href="home.php" class="navbar-brand link-scroll"><img src="img/logo.png" alt="" class="img-fluid"></a>
+                <a href="home_tecnico.php" class="navbar-brand link-scroll"><img src="img/logo.png" alt="" class="img-fluid"></a>
                 <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a href="formRev.php" class="nav-link link-scroll">Revenimiento </a></li>
-                        <li class="nav-item"><a href="formRes.php" class="nav-link link-scroll">Res Concreto</a></li>
-                        <li class="nav-item"><a href="formComp.php" class="nav-link link-scroll">G. Compactación</a></li>
+                        <li class="nav-item"><a href="formRev_tec.php" class="nav-link link-scroll">Revenimiento </a></li>
+                        <li class="nav-item"><a href="formRes_tec.php" class="nav-link link-scroll">R. Concreto</a></li>
+                        <li class="nav-item"><a href="formComp_tec.php" class="nav-link link-scroll">G. Compactación</a></li>
                         <li class="nav-item"><a href="login.html" class="btn btn-outline-white nav-link ">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <!-- Tecnico (formulario para cambiar contraseña) -->
+    <!-- PHP tecnico -->
+    <?php
+    include("dbConfig.php");
+    
+        $to = $_REQUEST["correo"];
+        $from = "acpilomex@gmail.com";
+        $password = $_REQUEST["contrasenia"];
+    
+        $headers = "From: $from";
+        $headers = "From: " . $from . "\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+    
+        $subject = "PILOMEX correo y contraseña";
+    
+        $logo = 'https://www.pilomex.com/img/Pilomex.png';
+        $link = 'https://www.pilomex.com';
+        $style = 'width:108px;height:108px;';
+    
+        $body = "<!DOCTYPE html><html lang='es'><head><meta charset='UTF-8'><title>Contraseña Nueva PILOMEX</title></head><body>";
+        $body .= "<table style='width: 100%;'>";
+        $body .= "<thead style='text-align: center;'><tr><td style='border:none;' colspan='2'>";
+        $body .= "<a href='{$link}'><img src='{$logo}' style='{$style}' alt='PILOMEX'></a><br><br>";
+        $body .= "</td></tr></thead><tbody><tr>";
+        $body .= "<td style='border:none;'><strong>Email:</strong> {$from}</td>";
+        $body .= "<td style='border:none;'><strong>Contraseña: {$password} </strong></td>";
+        $body .= "</tr>";
+        $body .= "<tr><td style='border:none;'><strong>Si deseas cambiar su contraseña inicia sesión y al final de la pagina encontraras un link con el nombre CAMBIAR CONTRASEÑA </strong></td></tr>";
+        $body .= "</tbody></table>";
+        $body .= "</body></html>";
+    
+        //$send = mail($to, $subject, $body, $headers);
+
+        $correo = $_POST ['correo'];
+        $query= "UPDATE EMPLEADOS SET contrasenia = '$password' WHERE correo = '$correo'";
+        $resultado = mysqli_query($enlace, $query);
+        
+        if(! $resultado )
+        {
+        die("No fue posible actualizar la información."  );
+        }
+        mysqli_close($enlace);
+    
+    ?>    
+    <!-- Tecnico (formulario para cambio de contraseña) -->
     <section id="tecnico" style="background-color: #fff;" class="text-page pb-4">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="heading">Nueva contraseña</h1>
-                    <form id="contact-form" action="new_password_insert.php" method="post" class="contact-form">
-                        <div class="controls">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="correo">Correo *</label>
-                                        <input type="email" id="correo" name="correo" placeholder="coreo@ejemplo.com" required="required" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="contrasenia">Contraseña nueva *</label>
-                                        <input type="text" id="contrasenia" required="required" name="contrasenia" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
+                    <form id="contact-form" action="home_tecnico.php" method="post" class="contact-form">
+                        <div class="controls" align="center">
+                            <p>Se ha enviado un e-mail a su correo </p>
+                            <p>con su nueva contraseña</p>
                             <div class="text-center">
-                                <input type="submit" value="Actualizar" class="btn btn-outline-primary btn-block">
+                                <input type="submit" value="Inicio" class="btn btn-outline-primary btn-block">
                             </div>
-                            <br>
-                            <a type="button" class="btn btn-outline-primary btn-block" href="home.php">Regresar</a>
                         </div>
                     </form>
 

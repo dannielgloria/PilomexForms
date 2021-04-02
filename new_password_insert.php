@@ -44,8 +44,8 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a href="formRev.php" class="nav-link link-scroll">Revenimiento </a></li>
                         <li class="nav-item"><a href="formRes.php" class="nav-link link-scroll">R. Concreto</a></li>
-                        <li class="nav-item"><a href="form3.php" class="nav-link link-scroll">G. Compactación</a></li>
-                        <li class="nav-item"><a href="#contact" class="btn btn-outline-white nav-link ">Cerrar sesión</a></li>
+                        <li class="nav-item"><a href="formComp.php" class="nav-link link-scroll">G. Compactación</a></li>
+                        <li class="nav-item"><a href="login.html" class="btn btn-outline-white nav-link ">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
@@ -101,7 +101,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="heading">Nueva contraseña</h1>
-                    <form id="contact-form" action="home_tecnico.php" method="post" class="contact-form">
+                    <form id="contact-form" action="home.php" method="post" class="contact-form">
                         <div class="controls" align="center">
                             <p>Se ha enviado un e-mail a su correo </p>
                             <p>con su nueva contraseña</p>

@@ -98,7 +98,7 @@
                         <div class="col-md-4">
                             <div class="icon"><img src="https://img.icons8.com/ios-filled/48/000000/user.png" /></div>
                             <h5>Cambiar contraseña</h5>
-                            <a type="button" class="btn btn-outline-primary btn-block" href="new_password.html">Generar nueva contraseña</a>
+                            <a type="button" class="btn btn-outline-primary btn-block" href="new_password_tec.html">Generar nueva contraseña</a>
                         </div>
                         <div class="col-md-4">
                             

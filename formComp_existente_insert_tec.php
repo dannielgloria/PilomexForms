@@ -38,12 +38,12 @@
     <header class="header">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a href="home.php" class="navbar-brand link-scroll"><img src="img/logo.png" alt="" class="img-fluid"></a>
+                <a href="home_tecnico.php" class="navbar-brand link-scroll"><img src="img/logo.png" alt="" class="img-fluid"></a>
                 <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a href="formRev.php" class="nav-link link-scroll">Revenimiento </a></li>
-                        <li class="nav-item"><a href="formRes.php" class="nav-link link-scroll">Res Concreto</a></li>
+                        <li class="nav-item"><a href="formRev_tec.php" class="nav-link link-scroll">Revenimiento </a></li>
+                        <li class="nav-item"><a href="formRes_tec.php" class="nav-link link-scroll">Res Concreto</a></li>
                         <li class="nav-item"><a href="login.html" class="btn btn-outline-white nav-link ">Cerrar sesión</a></li>
                     </ul>
                 </div>
@@ -90,8 +90,8 @@
                     mysqli_close($enlace);
                     ?>
                     <h5><div align="center"><img src="https://img.icons8.com/material/48/000000/ok--v1.png"/>&nbsp&nbspRegistro Insertado</div></h5>
-                    <a type="button" class="btn btn-outline-primary btn-block" href="formComp.php">Nuevo formulario GRADO DE COMPACTACIÓN</a>
-                    <a type="button" class="btn btn-outline-primary btn-block" href="formComp_existente.php">NUEVA CALA de proyecto ya existente</a>
+                    <a type="button" class="btn btn-outline-primary btn-block" href="formComp_tec.php">Nuevo formulario GRADO DE COMPACTACIÓN</a>
+                    <a type="button" class="btn btn-outline-primary btn-block" href="formComp_existente_tec.php">NUEVA CALA de proyecto ya existente</a>
                 </div>
             </div>
         </div>
