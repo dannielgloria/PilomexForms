@@ -65,11 +65,11 @@
                                 <h5>REVENIMIENTO DE CONCRETO</h5>
                                 <p>Descripción</p>
                                 <br>
-                                <a type="button" class="btn btn-outline-primary btn-block" href="form1.php">Llenar formulario nuevo</a>
+                                <a type="button" class="btn btn-outline-primary btn-block" href="formRev.php">Llenar formulario nuevo</a>
                                 <br>
-                                <a type="button" class="btn btn-outline-primary btn-block" href="form1_existente.php">Llenar formulario existente</a>
+                                <a type="button" class="btn btn-outline-primary btn-block" href="formRev_existente.php">Llenar formulario existente</a>
                                 <br>
-                                <a type="button" class="btn btn-outline-primary btn-block" href="form1_consulta.php">CONSULTAR</a>
+                                <a type="button" class="btn btn-outline-primary btn-block" href="formRev_consulta.php">CONSULTAR</a>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -77,11 +77,11 @@
                                 <div class="icon"><img src="https://img.icons8.com/ios-filled/48/000000/reinforced-concrete.png" /></div>
                                 <h5>RESISTENCIA DE CONCRETO</h5>
                                 <p>Descripción<br><br></p>
-                                <a type="button" class="btn btn-outline-primary btn-block" href="form2.php">Llenar formulario nuevo</a>
+                                <a type="button" class="btn btn-outline-primary btn-block" href="formRes.php">Llenar formulario nuevo</a>
                                 <br>
-                                <a type="button" class="btn btn-outline-primary btn-block" href="form2_existente.php">Llenar formulario existente</a>
+                                <a type="button" class="btn btn-outline-primary btn-block" href="formRes_existente.php">Llenar formulario existente</a>
                                 <br>
-                                <a type="button" class="btn btn-outline-primary btn-block" href="form2_consulta.php">CONSULTAR</a>
+                                <a type="button" class="btn btn-outline-primary btn-block" href="formRes_consulta.php">CONSULTAR</a>
                             </div>
                         </div>
                         <div class="col-md-4">

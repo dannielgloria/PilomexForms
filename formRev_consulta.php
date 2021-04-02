@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -31,7 +30,12 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
-
+<style>
+    th {
+    color: white;
+    background-color: black;
+}
+</style>    
 <body>
     <!-- intro end-->
     <!-- navbar-->
@@ -42,82 +46,65 @@
                 <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a href="formRev.php" class="nav-link link-scroll">Revenimiento </a></li>
-                        <li class="nav-item"><a href="formRes.php" class="nav-link link-scroll">R. Concreto</a></li>
-                        <li class="nav-item"><a href="form3.php" class="nav-link link-scroll">G. Compactación</a></li>
-                        <li class="nav-item"><a href="#contact" class="btn btn-outline-white nav-link ">Cerrar sesión</a></li>
+                    <li class="nav-item"><a href="formRev_existente.php" class="nav-link link-scroll">Revenimiento Existente</a></li>
+                        <li class="nav-item"><a href="formRev_nuevo.php" class="nav-link link-scroll">Revenimiento Nuevo</a></li>
+                        <li class="nav-item" style="background-color: black;"><a href="login.html" class="btn btn-outline-white nav-link" style="color: #fff;">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <!-- PHP tecnico -->
-    <?php
-    include("dbConfig.php");
-    
-        $to = $_REQUEST["correo"];
-        $from = "acpilomex@gmail.com";
-        $password = $_REQUEST["contrasenia"];
-    
-        $headers = "From: $from";
-        $headers = "From: " . $from . "\r\n";
-        $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-    
-        $subject = "PILOMEX correo y contraseña";
-    
-        $logo = 'https://www.pilomex.com/img/Pilomex.png';
-        $link = 'https://www.pilomex.com';
-        $style = 'width:108px;height:108px;';
-    
-        $body = "<!DOCTYPE html><html lang='es'><head><meta charset='UTF-8'><title>Contraseña Nueva PILOMEX</title></head><body>";
-        $body .= "<table style='width: 100%;'>";
-        $body .= "<thead style='text-align: center;'><tr><td style='border:none;' colspan='2'>";
-        $body .= "<a href='{$link}'><img src='{$logo}' style='{$style}' alt='PILOMEX'></a><br><br>";
-        $body .= "</td></tr></thead><tbody><tr>";
-        $body .= "<td style='border:none;'><strong>Email:</strong> {$from}</td>";
-        $body .= "<td style='border:none;'><strong>Contraseña: {$password} </strong></td>";
-        $body .= "</tr>";
-        $body .= "<tr><td style='border:none;'><strong>Si deseas cambiar su contraseña inicia sesión y al final de la pagina encontraras un link con el nombre CAMBIAR CONTRASEÑA </strong></td></tr>";
-        $body .= "</tbody></table>";
-        $body .= "</body></html>";
-    
-        //$send = mail($to, $subject, $body, $headers);
-
-        $correo = $_POST ['correo'];
-        $query= "UPDATE EMPLEADOS SET contrasenia = '$password' WHERE correo = '$correo'";
-        $resultado = mysqli_query($enlace, $query);
-        
-        if(! $resultado )
-        {
-        die("No fue posible actualizar la información."  );
-        }
-        mysqli_close($enlace);
-    
-    ?>    
-    <!-- Tecnico (formulario para cambio de contraseña) -->
-    <section id="tecnico" style="background-color: #fff;" class="text-page pb-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="heading">Nueva contraseña</h1>
-                    <form id="contact-form" action="home_tecnico.php" method="post" class="contact-form">
-                        <div class="controls" align="center">
-                            <p>Se ha enviado un e-mail a su correo </p>
-                            <p>con su nueva contraseña</p>
-                            <div class="text-center">
-                                <input type="submit" value="Inicio" class="btn btn-outline-primary btn-block">
-                            </div>
+    <!-- Consulta para Formulario 1 (Revenimiento) -->
+    <section id="revendimiento" style="background-color: #fff;" class="text-page pb-4">
+        <form id="contact-form" method="post" class="contact-form">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="heading">BÚSQUEDA REVENIMIENTO</h1>
+                        <!-- Conexión DB (SELECT de REVENIMIENTO) -->
+                        <br>
+                        <div class="form-group">
+                            <label for="folio_ch">Folio Colado (Cliente + No.Colado)</label>
+                            <select class="form-control" id="folio_ch" name="folio_ch">
+                            <?php
+                            include("dbConfig.php");
+                            $query1 = "SELECT folio_ch FROM BASE_CONCRETOH";
+                            $resultado1 = mysqli_query ($enlace, $query1 );
+                            while ($renglon=mysqli_fetch_array($resultado1,MYSQLI_NUM))
+                            {
+                                echo "<option class='dropdown-toggle' value=".$renglon[0].">".$renglon[0]."</option>";
+                                //$folio=$renglon[0];
+                            }
+                            ?>
+                                
+                            </select>
                         </div>
-                    </form>
-
-
-
+                        <div class="form-group">
+                            <label for="obra">Obra</label>
+                            <select class="form-control" id="obra" name="obra">
+                            <?php
+                            $query2 = "SELECT obra FROM BASE_CONCRETOH";
+                            $resultado2 = mysqli_query ($enlace, $query2 );
+                            while ($renglon2=mysqli_fetch_array($resultado2,MYSQLI_NUM))
+                            {
+                                echo "<option class='dropdown-toggle' value=".$renglon2[0].">".$renglon2[0]."</option>";
+                            }
+                            ?>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="text-center">
+                            <input type="button" onclick="submitForm('formRev_editarcolado_admin.php')" value="Buscar Colado" class="btn btn-outline-primary btn-block">
+                        </div>
+                        <br>
+                        <div class="text-center">
+                            <input type="button" onclick="submitForm('formRev_editarproyecto_admin.php')" value="Buscar Proyecto" class="btn btn-outline-primary btn-block">
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
     </section>
-
     <footer style="background-color: #111;">
         <div class="container">
             <div class="row copyright">
@@ -140,6 +127,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js">
     </script>
     <script src="js/front.js"></script>
+    <script type="text/javascript">
+        function submitForm(action) {
+            var form = document.getElementById('contact-form');
+            form.action = action;
+            form.submit();
+        }
+    </script>
 
 </body>
 

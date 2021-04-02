@@ -41,9 +41,9 @@
                 <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a href="form1.php" class="nav-link link-scroll">Revenimiento </a></li>
-                        <li class="nav-item"><a href="form2.php" class="nav-link link-scroll">Res Concreto</a></li>
-                        <li class="nav-item"><a href="login.html" class="btn btn-outline-white nav-link ">Cerrar sesión</a></li>
+                        <li class="nav-item"><a href="formRev_existente.php" class="nav-link link-scroll">Revenimiento Existente</a></li>
+                        <li class="nav-item"><a href="formRev_consulta.php" class="nav-link link-scroll">Consultar Revenimiento</a></li>
+                        <li class="nav-item" style="background-color: black;"><a href="login.html" class="btn btn-outline-white nav-link" style="color: #fff;">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
@@ -55,7 +55,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="heading">REVENIMIENTO</h1>
-                    <form id="contact-form" action="form1_insert.php" method="post" class="contact-form">
+                    <form id="contact-form" action="formRev_insert.php" method="post" class="contact-form">
                         <div class="controls">
                         
                             <div class="row">

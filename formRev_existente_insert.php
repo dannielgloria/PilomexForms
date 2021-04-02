@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -43,81 +42,45 @@
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a href="formRev.php" class="nav-link link-scroll">Revenimiento </a></li>
-                        <li class="nav-item"><a href="formRes.php" class="nav-link link-scroll">R. Concreto</a></li>
-                        <li class="nav-item"><a href="form3.php" class="nav-link link-scroll">G. Compactación</a></li>
-                        <li class="nav-item"><a href="#contact" class="btn btn-outline-white nav-link ">Cerrar sesión</a></li>
+                        <li class="nav-item"><a href="formRes.php" class="nav-link link-scroll">Res Concreto</a></li>
+                        <li class="nav-item"><a href="login.html" class="btn btn-outline-white nav-link ">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <!-- PHP tecnico -->
-    <?php
-    include("dbConfig.php");
-    
-        $to = $_REQUEST["correo"];
-        $from = "acpilomex@gmail.com";
-        $password = $_REQUEST["contrasenia"];
-    
-        $headers = "From: $from";
-        $headers = "From: " . $from . "\r\n";
-        $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-    
-        $subject = "PILOMEX correo y contraseña";
-    
-        $logo = 'https://www.pilomex.com/img/Pilomex.png';
-        $link = 'https://www.pilomex.com';
-        $style = 'width:108px;height:108px;';
-    
-        $body = "<!DOCTYPE html><html lang='es'><head><meta charset='UTF-8'><title>Contraseña Nueva PILOMEX</title></head><body>";
-        $body .= "<table style='width: 100%;'>";
-        $body .= "<thead style='text-align: center;'><tr><td style='border:none;' colspan='2'>";
-        $body .= "<a href='{$link}'><img src='{$logo}' style='{$style}' alt='PILOMEX'></a><br><br>";
-        $body .= "</td></tr></thead><tbody><tr>";
-        $body .= "<td style='border:none;'><strong>Email:</strong> {$from}</td>";
-        $body .= "<td style='border:none;'><strong>Contraseña: {$password} </strong></td>";
-        $body .= "</tr>";
-        $body .= "<tr><td style='border:none;'><strong>Si deseas cambiar su contraseña inicia sesión y al final de la pagina encontraras un link con el nombre CAMBIAR CONTRASEÑA </strong></td></tr>";
-        $body .= "</tbody></table>";
-        $body .= "</body></html>";
-    
-        //$send = mail($to, $subject, $body, $headers);
-
-        $correo = $_POST ['correo'];
-        $query= "UPDATE EMPLEADOS SET contrasenia = '$password' WHERE correo = '$correo'";
-        $resultado = mysqli_query($enlace, $query);
-        
-        if(! $resultado )
-        {
-        die("No fue posible actualizar la información."  );
-        }
-        mysqli_close($enlace);
-    
-    ?>    
-    <!-- Tecnico (formulario para cambio de contraseña) -->
-    <section id="tecnico" style="background-color: #fff;" class="text-page pb-4">
+    <!-- Formulario 1 (revendimiento) -->
+    <section id="revendimiento" style="background-color: #fff;" class="text-page pb-4">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="heading">Nueva contraseña</h1>
-                    <form id="contact-form" action="home_tecnico.php" method="post" class="contact-form">
-                        <div class="controls" align="center">
-                            <p>Se ha enviado un e-mail a su correo </p>
-                            <p>con su nueva contraseña</p>
-                            <div class="text-center">
-                                <input type="submit" value="Inicio" class="btn btn-outline-primary btn-block">
-                            </div>
-                        </div>
-                    </form>
+                    <h1 class="heading">REVENIMIENTO</h1>
+                    <?php
+                    include("dbConfig.php");
 
-
-
+                    $llave_tabla = $_POST ['llave_tabla'];
+                    $folio_ch = $_POST ['folio_ch'];
+                    $elem_colado = $_POST ['elem_colado'];
+                    $muestra = $_POST ['muestra'];
+                    $remision = $_POST ['remision'];
+                    $ensaye = $_POST ['ensaye'];
+                    $revenimiento_muestra = $_POST ['revenimiento_muestra'];
+                    $query3= "INSERT INTO IDENTIFICACION VALUES ('$llave_tabla','$folio_ch','$elem_colado',$muestra,$remision,$ensaye,'$revenimiento_muestra')";
+                    $resultado = mysqli_query($enlace, $query3);
+                    
+                    if(! $resultado )
+                    {
+                    die("No fue posible insertar los datos."  );
+                    }
+                    mysqli_close($enlace);
+                    ?>
+                    <h5><div align="center"><img src="https://img.icons8.com/material/48/000000/ok--v1.png"/>&nbsp&nbspRegistro Insertado</div></h5>
+                    <a type="button" class="btn btn-outline-primary btn-block" href="formRev.php">Nuevo formulario REVENIMIENTO</a><br>
+                    <a type="button" class="btn btn-outline-primary btn-block" href="formRev_existente.php">NUEVA MUESTRA REVENIMIENTO</a>
                 </div>
             </div>
         </div>
     </section>
-
     <footer style="background-color: #111;">
         <div class="container">
             <div class="row copyright">
