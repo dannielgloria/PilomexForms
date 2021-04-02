@@ -65,9 +65,9 @@
                 <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a href="form1.php" class="nav-link link-scroll">Revenimiento </a></li>
-                        <li class="nav-item"><a href="form2.php" class="nav-link link-scroll">R. Concreto</a></li>
-                        <li class="nav-item"><a href="form3.php" class="nav-link link-scroll">G. Compactación</a></li>
+                        <li class="nav-item"><a href="formRev.php" class="nav-link link-scroll">Revenimiento </a></li>
+                        <li class="nav-item"><a href="formRes.php" class="nav-link link-scroll">R. Concreto</a></li>
+                        <li class="nav-item"><a href="formComp.php" class="nav-link link-scroll">G. Compactación</a></li>
                         <li class="nav-item"><a href="login.html" class="btn btn-outline-white nav-link ">Cerrar sesión</a></li>
                     </ul>
                 </div>
@@ -353,11 +353,11 @@
                         ?>
                         <br>
                         <div class="text-center">
-                            <input type="button" onclick="submitForm('form3_editarcala_admin.php')" value="Editar" class="btn btn-outline-primary btn-block">
+                            <input type="button" onclick="submitForm('formComp_editarcala_admin.php')" value="Editar" class="btn btn-outline-primary btn-block">
                         </div>
                         <br>
                         <div class="text-center">
-                            <input type="button" onclick="submitForm('form3_admin_descargable.php')" value="Descargar" class="btn btn-outline-primary btn-block">
+                            <input type="button" onclick="submitForm('formComp_admin_descargable.php')" value="Descargar" class="btn btn-outline-primary btn-block">
                         </div>
                     </div>
                 </div>

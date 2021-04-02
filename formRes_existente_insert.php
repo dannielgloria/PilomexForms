@@ -30,12 +30,7 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
-<style>
-    th {
-    color: white;
-    background-color: black;
-}
-</style>    
+
 <body>
     <!-- intro end-->
     <!-- navbar-->
@@ -46,48 +41,60 @@
                 <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a href="form1.php" class="nav-link link-scroll">Revenimiento </a></li>
-                        <li class="nav-item"><a href="form2.php" class="nav-link link-scroll">R. Concreto</a></li>
-                        <li class="nav-item"><a href="form3.php" class="nav-link link-scroll">G. Compactación</a></li>
+                        <li class="nav-item"><a href="formRev.php" class="nav-link link-scroll">Revenimiento </a></li>
+                        <li class="nav-item"><a href="formRes.php" class="nav-link link-scroll">Res Concreto</a></li>
                         <li class="nav-item"><a href="login.html" class="btn btn-outline-white nav-link ">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <!-- Consulta para Formulario 3 (Grado de Compactación) -->
+    <!-- Formulario 1 (revendimiento) -->
     <section id="revendimiento" style="background-color: #fff;" class="text-page pb-4">
-        <form id="contact-form" method="post" class="contact-form">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="heading">BÚSQUEDA GRADO DE COMPACTACIÓN</h1>
-                        <br>
-                        <div class="form-group">
-                            <label for="folio_gc">Folio de Compactación (Cliente + Ubicación)</label>
-                            <select class="form-control" id="folio_gc" name="folio_gc">
-                            <?php
-                            include("dbConfig.php");
-
-                            $query1 = "SELECT folio_gc FROM BASE_GRADOCOMPAC";
-                            $resultado1 = mysqli_query ($enlace, $query1 );
-                            while ($renglon=mysqli_fetch_array($resultado1,MYSQLI_NUM))
-                            {
-                                echo "<option class='dropdown-toggle' value=".$renglon[0].">".$renglon[0]."</option>";
-                                //$folio=$renglon[0];
-                            }
-                            ?>
-                            
-                            </select>
-                        </div>
-                        <br>
-                        <div class="text-center">
-                            <input type="button" onclick="submitForm('form3_editarproyecto_admin.php')" value="Buscar Proyecto" class="btn btn-outline-primary btn-block">
-                        </div>
-                    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="heading">REVENIMIENTO</h1>
+                    <?php
+                    include("dbConfig.php");
+                    
+                    $llave_tabla = $_POST ['llave_tabla'];
+                    $folio_ch = $_POST ['folio_ch'];
+                    $edad = $_POST ['edad'];
+                    $diametro = $_POST ['diametro'];
+                    $area = $_POST ['area'];
+                    $fecha_colado = $_POST ['fecha_colado'];
+                    $fecha_ruptura = $_POST ['fecha_ruptura'];
+                    $peso = $_POST ['peso'];
+                    $query1= "INSERT INTO DATOS_ESPECIMEN VALUES ('$llave_tabla','$folio_ch',$edad,$diametro,$area,$ensaye,'$fecha_colado','$fecha_ruptura',$peso)";
+                    $resultado1 = mysqli_query($enlace, $query);
+                    
+                    if(! $resultado1)
+                    {
+                    die("<br> No fue posible insertar los datos en la tabla DATOS_SPECIMEN."  );
+                    }
+                    $llave_tabla = $_POST ['llave_tabla'];
+                    $folio_ch = $_POST ['folio_ch'];
+                    $prueba = $_POST ['prueba'];
+                    $edad = $_POST ['edad_ensayo'];
+                    $carga_rup = $_POST ['carga_rup'];
+                    $resistencia = $_POST ['resistencia'];
+                    $porc_resis = $_POST ['porc_resis'];
+                    $query2= "INSERT INTO DATOS_ENSAYO VALUES ('$llave_tabla','$folio_ch','$elem_colado',$muestra,$remision,$ensaye,'$revenimiento_muestra')";
+                    $resultado2 = mysqli_query($enlace, $query2);
+                    
+                    if(! $resultado2 )
+                    {
+                    die("No fue posible insertar los datos en DATOS_ENSAYO."  );
+                    }
+                    mysqli_close($enlace);
+                    ?>
+                    <h5><div align="center"><img src="https://img.icons8.com/material/48/000000/ok--v1.png"/>&nbsp&nbspRegistro Insertado</div></h5>
+                    <a type="button" class="btn btn-outline-primary btn-block" href="formRes.php">Nuevo formulario RESISTENCIA DE CONCRETO</a>
+                    <a type="button" class="btn btn-outline-primary btn-block" href="formRes_existente.php">NUEVA MUESTRA RESISTENCIA DE CONCRETO</a>
                 </div>
             </div>
-        </form>
+        </div>
     </section>
     <footer style="background-color: #111;">
         <div class="container">
@@ -111,13 +118,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js">
     </script>
     <script src="js/front.js"></script>
-    <script type="text/javascript">
-        function submitForm(action) {
-            var form = document.getElementById('contact-form');
-            form.action = action;
-            form.submit();
-        }
-    </script>
 
 </body>
 
