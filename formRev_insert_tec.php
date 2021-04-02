@@ -41,7 +41,7 @@
                 <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a href="formRev_existente.php" class="nav-link link-scroll">Revenimiento Existente</a></li>
+                        <li class="nav-item"><a href="formRev_existente_tec.php" class="nav-link link-scroll">Revenimiento Existente</a></li>
                         <li class="nav-item"><a href="formRev_consulta.php" class="nav-link link-scroll">Consulta</a></li>
                         <li class="nav-item" style="background-color: black"><a href="login.html" class="btn btn-outline-white nav-link " style="color: #fff">Cerrar sesión</a></li>
                     </ul>
@@ -110,8 +110,8 @@
                     mysqli_close($enlace);
                     ?>
                     <h5><div align="center"><img src="https://img.icons8.com/material/48/000000/ok--v1.png"/>&nbsp&nbspRegistro Insertado</div></h5>
-                    <a type="button" class="btn btn-outline-primary btn-block" href="formRev.php">Nuevo formulario REVENIMIENTO</a>
-                    <a type="button" class="btn btn-outline-primary btn-block" href="formRev_existente.php">NUEVA MUESTRA REVENIMIENTO</a>
+                    <a type="button" class="btn btn-outline-primary btn-block" href="formRev_tec.php">Nuevo formulario REVENIMIENTO</a>
+                    <a type="button" class="btn btn-outline-primary btn-block" href="formRev_existente_tec.php">NUEVA MUESTRA REVENIMIENTO</a>
                 </div>
             </div>
         </div>

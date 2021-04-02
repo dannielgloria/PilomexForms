@@ -47,7 +47,7 @@
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="formRev_existente.php" class="nav-link link-scroll">Revenimiento Existente</a></li>
-                        <li class="nav-item"><a href="formRev_nuevo.php" class="nav-link link-scroll">Revenimiento Nuevo</a></li>
+                        <li class="nav-item"><a href="formRev.php" class="nav-link link-scroll">Revenimiento Nuevo</a></li>
                         <li class="nav-item" style="background-color: black;"><a href="login.html" class="btn btn-outline-white nav-link" style="color: #fff;">Cerrar sesión</a></li>
                     </ul>
                 </div>

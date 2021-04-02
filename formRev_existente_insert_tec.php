@@ -41,9 +41,9 @@
                 <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a href="formRev_existente.php" class="nav-link link-scroll">Revenimiento Existente</a></li>
+                        <li class="nav-item"><a href="formRev_tec.php" class="nav-link link-scroll">Revenimiento Nuevo</a></li>
                         <li class="nav-item"><a href="formRev_consulta.php" class="nav-link link-scroll">Consulta</a></li>
-                        <li class="nav-item" style="background-color: black"><a href="login.html" class="btn btn-outline-white nav-link " style="color: #fff">Cerrar sesión</a></li>
+                        <li class="nav-item" style="background-color: black"><a href="login.html" class="btn btn-outline-white nav-link" style="color: #fff">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
@@ -58,39 +58,6 @@
                     <?php
                     include("dbConfig.php");
 
-                    $folio_lib = $_POST ['folio_lib'];
-                    $cliente = $_POST ['cliente'];
-                    $folio_ch = $_POST ['folio_ch_1'];
-                    $obra = $_POST ['obra'];
-                    $no_colado = $_POST ['no_colado'];
-                    $fecha_colado = $_POST ['fecha_colado'];
-                    $fecha_informe = $_POST ['fecha_informe'];
-                    $concretera = $_POST ['concretera'];
-                    $observaciones = $_POST['observaciones'];
-                    $query = "INSERT INTO BASE_CONCRETOH VALUES ('$folio_ch', $folio_lib, '$cliente', '$obra', $no_colado ,'$fecha_colado', '$fecha_informe', '$concretera', '$observaciones')";
-                    echo $query;
-                    $resultado1 = mysqli_query($enlace, $query);
-                    
-                    if(! $resultado1)
-                    {
-                    die("<br> No fue posible insertar los datos en la tabla BASE."  );
-                    }
-                    $resistencia = $_POST ['resistencia'];
-                    $revenimiento = $_POST ['revenimiento_prom'];
-                    $volumen = $_POST ['volumen'];
-                    $agregado = $_POST ['agregado'];
-                    $equipo= $_POST ['equipo'];
-                    $vibrador = $_POST ['vibrador'];
-                    $aditivo = $_POST ['aditivo'];
-                    $tipo_agregado = $_POST ['tipo_agregado'];
-                    $query2= "INSERT INTO DATOS_PROYECTO VALUES (NULL,'$folio_ch',$resistencia,$revenimiento,$volumen,$agregado,'$equipo','$vibrador','$aditivo','$tipo_agregado')";
-                    echo $query2;
-                    $resultado2 = mysqli_query($enlace, $query2);
-                    
-                    if(! $resultado2)
-                    {
-                    die("<br> No fue posible insertar los datos en la tabla DATOS PROYECTO."  );
-                    }
                     $llave_tabla = $_POST ['llave_tabla'];
                     $folio_ch = $_POST ['folio_ch'];
                     $elem_colado = $_POST ['elem_colado'];
@@ -99,19 +66,17 @@
                     $ensaye = $_POST ['ensaye'];
                     $revenimiento_muestra = $_POST ['revenimiento_muestra'];
                     $query3= "INSERT INTO IDENTIFICACION VALUES ('$llave_tabla','$folio_ch','$elem_colado',$muestra,$remision,$ensaye,'$revenimiento_muestra')";
-                    echo $query3;
-                   // $resultado = mysqli_query($enlace, $query,$query2,$query3);
-                    $resultado3 = mysqli_query($enlace, $query3);
+                    $resultado = mysqli_query($enlace, $query3);
                     
-                    if(! $resultado3 )
+                    if(! $resultado )
                     {
-                    die("<br> No fue posible insertar los datos en la tabla IDENTIFICACION."  );
+                    die("No fue posible insertar los datos."  );
                     }
                     mysqli_close($enlace);
                     ?>
                     <h5><div align="center"><img src="https://img.icons8.com/material/48/000000/ok--v1.png"/>&nbsp&nbspRegistro Insertado</div></h5>
-                    <a type="button" class="btn btn-outline-primary btn-block" href="formRev.php">Nuevo formulario REVENIMIENTO</a>
-                    <a type="button" class="btn btn-outline-primary btn-block" href="formRev_existente.php">NUEVA MUESTRA REVENIMIENTO</a>
+                    <a type="button" class="btn btn-outline-primary btn-block" href="formRev_tec.php">Nuevo formulario REVENIMIENTO</a><br>
+                    <a type="button" class="btn btn-outline-primary btn-block" href="formRev_existente_tec.php">NUEVA MUESTRA REVENIMIENTO</a>
                 </div>
             </div>
         </div>
