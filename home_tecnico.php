@@ -65,9 +65,9 @@
                                 <h5>REVENIMIENTO DE CONCRETO</h5>
                                 <p>Descripción</p>
                                 <br>
-                                <a type="button" class="btn btn-outline-primary btn-block" href="form1.php">Llenar formulario nuevo</a>
+                                <a type="button" class="btn btn-outline-primary btn-block" href="formRev_tec.php">Llenar formulario nuevo</a>
                                 <br>
-                                <a type="button" class="btn btn-outline-primary btn-block" href="form1_existente.php">Llenar formulario existente</a>
+                                <a type="button" class="btn btn-outline-primary btn-block" href="formRev_existente_tec.php">Llenar formulario existente</a>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -75,9 +75,9 @@
                                 <div class="icon"><img src="https://img.icons8.com/ios-filled/48/000000/reinforced-concrete.png" /></div>
                                 <h5>RESISTENCIA DE CONCRETO</h5>
                                 <p>Descripción<br><br></p>
-                                <a type="button" class="btn btn-outline-primary btn-block" href="form2.php">Llenar formulario nuevo</a>
+                                <a type="button" class="btn btn-outline-primary btn-block" href="formRes_tec.php">Llenar formulario nuevo</a>
                                 <br>
-                                <a type="button" class="btn btn-outline-primary btn-block" href="form2_existente.php">Llenar formulario existente</a>
+                                <a type="button" class="btn btn-outline-primary btn-block" href="formRes_existente_tec.php">Llenar formulario existente</a>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -85,9 +85,9 @@
                                 <div class="icon"><img src="https://img.icons8.com/fluent-systems-filled/48/000000/water-bottle.png" /></div>
                                 <h5>GRADO DE COMPACTACION</h5>
                                 <p>Descripción<br><br></p>
-                                <a type="button" class="btn btn-outline-primary btn-block" href="form3.php">Llenar formulario nuevo</a>
+                                <a type="button" class="btn btn-outline-primary btn-block" href="formComp_tec.php">Llenar formulario nuevo</a>
                                 <br>
-                                <a type="button" class="btn btn-outline-primary btn-block" href="form3_existente.php">Llenar formulario existente</a>
+                                <a type="button" class="btn btn-outline-primary btn-block" href="formComp_existente_tec.php">Llenar formulario existente</a>
                             </div>
                         </div>
                     </div>
