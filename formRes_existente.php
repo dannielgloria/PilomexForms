@@ -41,8 +41,8 @@
                 <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a href="form1.php" class="nav-link link-scroll">Revenimiento </a></li>
-                        <li class="nav-item"><a href="form2.php" class="nav-link link-scroll">Res Concreto</a></li>
+                        <li class="nav-item"><a href="formRev.php" class="nav-link link-scroll">Revenimiento </a></li>
+                        <li class="nav-item"><a href="formRes.php" class="nav-link link-scroll">Res Concreto</a></li>
                         <li class="nav-item"><a href="login.html" class="btn btn-outline-white nav-link ">Cerrar sesión</a></li>
                     </ul>
                 </div>
@@ -55,7 +55,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h2 class="heading">RESISTENCIA DE CONCRETOS</h2>
-                    <form id="contact-form" action="form2_existente_insert.php" method="post" class="contact-form">
+                    <form id="contact-form" action="formRes_existente_insert.php" method="post" class="contact-form">
                         <div class="controls">
                             <br>
                             <div class="row">

@@ -41,228 +41,211 @@
                 <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a href="form1.php" class="nav-link link-scroll">Revenimiento </a></li>
-                        <li class="nav-item"><a href="form2.php" class="nav-link link-scroll">Res Concreto</a></li>
+                        <li class="nav-item"><a href="formRev.php" class="nav-link link-scroll">Revenimiento </a></li>
+                        <li class="nav-item"><a href="formRes.php" class="nav-link link-scroll">Res Concreto</a></li>
                         <li class="nav-item"><a href="login.html" class="btn btn-outline-white nav-link ">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <!-- Form 2 (resistencia de concretos) -->
-    <section id="revendimiento" style="background-color: #fff;" class="text-page pb-4">
+    <!-- Form 3 (Determinación de grado de compactación en sitio) -->
+    <section id="compactación" style="background-color: #fff;" class="text-page pb-4">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="heading">RESISTENCIA DE CONCRETO</h1>
-                    <form id="contact-form" action="form2_insert.php" method="post" class="contact-form">
+                    <h1 class="heading">DETERMINACIÓN DE GRADO DE COMPACTACIÓN</h1>
+                    <form id="contact-form" action="formComp_insert.php" method="post" class="contact-form">
                         <div class="controls">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="name">Folio cementera *</label>
-                                        <!--Folio ÚNICO por proyecto y dado por la libretita-->
-                                        <input type="tel" id="folio_lib" name="folio_lib" placeholder="No. de folio" required="required" class="form-control">
+                                        <label for="folio_gc">Folio de compactacion *</label>
+                                        <!--Folio ÚNICO por proyecto y dado por CLIENTE + UBICACION-->
+                                        <input type="tel" id="folio_gc" name="folio_gc" placeholder="CLIENTE + UBICACION" required="required" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="name">Cliente *</label>
+                                        <label for="cliente">Cliente *</label>
                                         <input type="text" id="cliente" name="cliente" placeholder="Ingrese el cliente" required="required" class="form-control">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="email">Obra *</label>
-                                <input type="text" id="obra" name="obra" placeholder="Ingrese el nombre de la obra" required="required" class="form-control">
+                                <label for="ubicacion">Ubicación de obra *</label>
+                                <input type="text" id="ubicacion" name="ubicacion" placeholder="Ingrese la ubicación de la obra" required="required" class="form-control">
                             </div>
                             <div class="row">
-                                <div class="col-md-2">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="name">Colado*</label>
-                                        <input type="number" id="no_colado" name="no_colado" placeholder="No." required="required" class="form-control">
+                                        <label for="no_cala">Cala No.</label>
+                                        <input type="number" id="no_cala" name="no_cala" placeholder="No." class="form-control">
                                     </div>
                                 </div>
-                                <div class="col-md-5">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="name">Fecha Colado*</label>
-                                        <input type="date" id="fecha_colado" name="fecha_colado" required="required" class="form-control">
+                                        <label for="de">De</label>
+                                        <input type="text" id="de" name="de" class="form-control">
                                     </div>
                                 </div>
-                                <div class="col-md-5">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="name">Fecha Informe</label>
-                                        <input type="date" id="fecha_informe" name="fecha_informe" required="required" class="form-control">
+                                        <label for="nivel">Nivel</label>
+                                        <input type="text" id="nivel" name="nivel" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="compactacion_req">Compactación requerida</label>
+                                        <input type="text" id="compactacion_req" name="compactacion_req" placeholder="No."class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="fecha">Fecha</label>
+                                        <input type="date" id="fecha" name="fecha" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="para_emplearse">Para emplearse</label>
+                                        <input type="text" id="para_emplearse" name="para_emplearse" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <h5>DETERMINACIÓN DE LA MASA VOLUMÉTRICA HUMEDA DEL MATERIAL</h5>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="fecha">Fecha*</label>
+                                        <input type="date" id="fecha" name="fecha" required="required" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="num_cala">1. No. Cala* </label>
+                                        <input type="text" id="num_cala" name="num_cala" required="required" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="localizacion">2. Localización*</label>
+                                        <input type="text" id="localizacion" name="localizacion" required="required" class="form-control">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="number">Concretera* </label>
-                                <input type="text" id="concretera" name="concretera" placeholder="Ingrese el nombre de la concretera" required="required" class="form-control">
+                                <label for="vol_sond">3. Volúmen de sondeo [cm<sup>3</sup>]* </label>
+                                <input type="number" id="vol_sond" name="vol_sond" required="required" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="masa_humed">4. Masa humeda de material [g]* </label>
+                                <input type="number" id="masa_humed" name="masa_humed" required="required" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="masa_vol">5. Masa volumétrica humeda del material [kg/m<sup>3</sup>]* </label>
+                                <input type="text" id="masa_vol" name="masa_vol" placeholder="00.00" required="required" class="form-control">
                             </div>
                             <br>
-                            <h5>DATOS PROYECTO</h5>
+                            <h5>DETERMINACIÓN DEL CONTENIDO DE AGUA</h5>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="name">Resistencia de proyecto [kg/cm<sup>2</sup>] </label>
-                                        <input type="number" id="resistencia" name="resistencia" placeholder="00.00" required="required" class="form-control">
+                                        <label for="num_recip">6. Número de recipiente* </label>
+                                        <input type="number" id="num_recip" name="num_recip" required="required" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="name">Equipo de mezclado y capacidad </label>
-                                        <input type="text" id="equipo" name="equipo" required="required" class="form-control">
+                                        <label for="masa_recip">7. Masa del recipiente (TARA) [g]* </label>
+                                        <input type="number" id="masa_recip" name="masa_recip" required="required" class="form-control">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="name">Revenimiento [cm] </label>
-                                        <input type="number" id="revenimiento" name="revenimiento" placeholder="00.00" required="required" class="form-control">
+                                        <label for="masa_mathum_tara">8. Masa material humedo + TARA [g]* </label>
+                                        <input type="number" id="masa_mathum_tara" name="masa_mathum_tara" required="required" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="name">Tipo de vibrador utilizado </label>
-                                        <input type="text" id="vibrador" name="vibrador" required="required" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="name">Volumen del colado [m<sup>3</sup>] </label>
-                                        <input type="number" id="volumen" name="volumen" placeholder="00.00" required="required" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="name">Aditivo </label>
-                                        <input type="text" id="aditivo" name="aditivo" required="required" class="form-control">
+                                        <label for="masa_matseco_tara">9. Masa material seco + TARA [g]* </label>
+                                        <input type="number" id="masa_matseco_tara" name="masa_matseco_tara" required="required" class="form-control">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="name">Agregado T.Max[mm] </label>
-                                        <input type="number" id="agregado" name="agregado" placeholder="00.00" required="required" class="form-control">
+                                        <label for="dif">10. Diferencia (Agua) (5)-(9) [g]* </label>
+                                        <input type="number" id="dif" name="dif" required="required" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="name">Tipo de agregado </label>
-                                        <input type="text" id="tipo_agregado" name="tipo_agregado" required="required" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <h5>DATOS DEL ESPECIMEN</h5>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="name">Folio Colado (Cliente + No.Colado)*</label><!--Folio ch-->
-                                        <input type="text" id="folio_ch" name="folio_ch" placeholder="CLIENTE0" required="required" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="name">Folio Muestra (Folio Colado + No.muestra)*</label> <!-- Folio dado por la llave de la tabla IDENTIFICACIÓN-->
-                                        <input type="text" id="llave_tabla" name="llave_tabla" placeholder="CLIENTE0-0" required="required" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="edad">Edad (días)</label>
-                                        <input type="number" id="edad" name="edad" placeholder="No. días" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="diametro">Diametro (cm)</label>
-                                        <input type="number" id="diametro" name="diametro" placeholder="00.00" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="area">Area (cm<sup>2</sup>)</label>
-                                        <input type="number" id="area" name="area" placeholder="No. días" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="fecha_colado">Fecha de colado</label>
-                                        <input type="date" id="fecha_colado" name="fecha_colado" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="fecha_ruptura">Fecha de ruptura</label>
-                                        <input type="date" id="fecha_ruptura" name="fecha_ruptura" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="peso">Peso (kg)</label>
-                                        <input type="number" id="peso" name="peso" placeholder="00.00" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <h5>DATOS DE ENSAYO</h5>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="name">Folio Colado (Cliente + No.Colado)*</label><!--Folio ch-->
-                                        <input type="text" id="folio_ch" name="folio_ch" placeholder="CLIENTE0" required="required" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="name">Folio Muestra (Folio Colado + No.muestra)*</label> <!-- Folio dado por la llave de la tabla IDENTIFICACIÓN-->
-                                        <input type="text" id="llave_tabla" name="llave_tabla" placeholder="CLIENTE0-0" required="required" class="form-control">
+                                        <label for="masa_matseco">11. Masa material seco (5)-(7) [g]* </label>
+                                        <input type="number" id="masa_matseco" name="masa_matseco" placeholder="00.00" required="required" class="form-control">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="prueba">Tipo de prueba</label>
-                                <input type="text" id="prueba" name="prueba" placeholder="Ingrese el tipo de prueba" class="form-control">
+                                <label for="cont_agua">12. Contenido de agua en decimales (10)/(11)* </label>
+                                <input type="text" id="cont_agua" name="cont_agua" placeholder="00.00" required="required" class="form-control">
+                            </div>
+                            <br>
+                            <h5>DETERMINACIÓN DE LA MASA VOLUMETRICA SECA Y GRADO DE COMPACTACIÓN</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="prof_sond">13. Profundidad del sondeo [cm]*</label><!--Folio ch-->
+                                        <input type="number" id="prof_sond" name="prof_sond" required="required" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="cont_agua_optima">14. Contenido de agua optima del material (%)*</label> 
+                                        <input type="text" id="cont_agua_optima" name="cont_agua_optima" required="required" class="form-control">
+                                    </div>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="edad_ensayo">Edad (días)</label>
-                                        <input type="number" id="edad_ensayo" name="edad_ensayo" placeholder="No. días" class="form-control">
+                                        <label for="cont_agua_lugar">15. Contenido de agua del lugar (12)x100 [g]*</label>
+                                        <input type="text" id="cont_agua_lugar" name="cont_agua_lugar" placeholder="00.00" required="required" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="carga_rup">Carga de ruptura (kgf)</label>
-                                        <input type="number" id="carga_rup" name="carga_rup" placeholder="00.00" class="form-control">
+                                        <label for="masa_vol_seca_max">16. Masa volumétrica seca máxima [kg/m<sup>3</sup>]*</label>
+                                        <input type="number" id="masa_vol_seca_max" name="masa_vol_seca_max" class="form-control">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="resistencia">Resistencia (kg/cm<sup>2</sup>)</label>
-                                        <input type="number" id="resistencia" name="resistencia" placeholder="No. días" class="form-control">
+                                        <label for="masa_vol_seca_lugar">17. Masa volumétrica seca del lugar [kg/m<sup>3</sup>]*</label>
+                                        <input type="number" id="masa_vol_seca_lugar" name="masa_vol_seca_lugar" required="required" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="porc_resis">% de resistencia de proyecto</label>
-                                        <input type="number" id="porc_resis" name="porc_resis" placeholder="00.00" class="form-control">
+                                        <label for="grado_compact">18. Grado de compactación (16)/(17)x100 [N]*</label>
+                                        <input type="text" id="grado_compact" name="grado_compact" required="required" class="form-control">
                                     </div>
                                 </div>
+                            </div>
+                            <br>
+                            <h5>OBSERVACIONES</h5>
+                            <div class="form-group">
+                                <textarea rows="4" name="observaciones" id="observaciones" placeholder="Ingrese su mensaje" required="required" class="form-control"></textarea>
                             </div>
                             <div class="text-center">
                                 <input type="submit" value="Guardar" class="btn btn-outline-primary btn-block">

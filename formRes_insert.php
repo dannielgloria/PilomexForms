@@ -41,8 +41,8 @@
                 <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a href="form1.php" class="nav-link link-scroll">Revenimiento </a></li>
-                        <li class="nav-item"><a href="form2.php" class="nav-link link-scroll">Res Concreto</a></li>
+                        <li class="nav-item"><a href="formRev.php" class="nav-link link-scroll">Revenimiento </a></li>
+                        <li class="nav-item"><a href="formRes.php" class="nav-link link-scroll">Res Concreto</a></li>
                         <li class="nav-item"><a href="login.html" class="btn btn-outline-white nav-link ">Cerrar sesión</a></li>
                     </ul>
                 </div>
@@ -58,6 +58,35 @@
                     <?php
                     include("dbConfig.php");
                     
+                    $folio_lib = $_POST ['folio_lib'];
+                    $cliente = $_POST ['cliente'];
+                    $obra = $_POST ['obra'];
+                    $no_colado = $_POST ['no_colado'];
+                    $fecha_colado = $_POST ['fecha_colado'];
+                    $fecha_informe = $_POST ['fecha_informe'];
+                    $concretera = $_POST ['concretera'];
+                    $query= "INSERT INTO BASE_CONCRETOH VALUES ($folio_lib,'$cliente','$obra',$no_colado,$fecha_colado,$fecha_informe,'$concretera')";
+                    $resultado1 = mysqli_query($enlace, $query);
+                    
+                    if(! $resultado1)
+                    {
+                    die("<br> No fue posible insertar los datos en la tabla BASE_CONCRETOH."  );
+                    }
+                    $resistencia = $_POST ['resistencia'];
+                    $revenimiento = $_POST ['revenimiento_prom'];
+                    $volumen = $_POST ['volumen'];
+                    $agregado = $_POST ['agregado'];
+                    $equipo= $_POST ['equipo'];
+                    $vibrador = $_POST ['vibrador'];
+                    $aditivo = $_POST ['aditivo'];
+                    $tipo_agregado = $_POST ['tipo_agregado'];
+                    $query2= "INSERT INTO DATOS_PROYECTO VALUES ($resistencia,$revenimiento,$volumen,$agregado,'$equipo','$vibrador','$aditivo','$tipo_agregado')";
+                    $resultado2 = mysqli_query($enlace, $query2);
+                    
+                    if(! $resultado2)
+                    {
+                    die("<br> No fue posible insertar los datos en la tabla DATOS_PROYECTO."  );
+                    }
                     $llave_tabla = $_POST ['llave_tabla'];
                     $folio_ch = $_POST ['folio_ch'];
                     $edad = $_POST ['edad'];
@@ -66,12 +95,12 @@
                     $fecha_colado = $_POST ['fecha_colado'];
                     $fecha_ruptura = $_POST ['fecha_ruptura'];
                     $peso = $_POST ['peso'];
-                    $query1= "INSERT INTO DATOS_ESPECIMEN VALUES ('$llave_tabla','$folio_ch',$edad,$diametro,$area,$ensaye,'$fecha_colado','$fecha_ruptura',$peso)";
-                    $resultado1 = mysqli_query($enlace, $query);
+                    $query3= "INSERT INTO DATOS_ESPECIMEN VALUES ('$llave_tabla','$folio_ch',$edad,$diametro,$area,$ensaye,'$fecha_colado','$fecha_ruptura',$peso)";
+                    $resultado3 = mysqli_query($enlace, $query3);
                     
-                    if(! $resultado1)
+                    if(! $resultado3)
                     {
-                    die("<br> No fue posible insertar los datos en la tabla DATOS_SPECIMEN."  );
+                    die("<br> No fue posible insertar los datos en la tabla DATOS_ESPECIMEN."  );
                     }
                     $llave_tabla = $_POST ['llave_tabla'];
                     $folio_ch = $_POST ['folio_ch'];
@@ -80,18 +109,18 @@
                     $carga_rup = $_POST ['carga_rup'];
                     $resistencia = $_POST ['resistencia'];
                     $porc_resis = $_POST ['porc_resis'];
-                    $query2= "INSERT INTO DATOS_ENSAYO VALUES ('$llave_tabla','$folio_ch','$elem_colado',$muestra,$remision,$ensaye,'$revenimiento_muestra')";
-                    $resultado2 = mysqli_query($enlace, $query2);
+                    $query4= "INSERT INTO DATOS_ENSAYO VALUES ('$llave_tabla','$folio_ch','$elem_colado',$muestra,$remision,$ensaye,'$revenimiento_muestra')";
+                    $resultado4 = mysqli_query($enlace, $query4);
                     
-                    if(! $resultado2 )
+                    if(! $resultado4)
                     {
-                    die("No fue posible insertar los datos en DATOS_ENSAYO."  );
+                    die("<br> No fue posible insertar los datos en la tabla DATOS_ENSAYO."  );
                     }
                     mysqli_close($enlace);
                     ?>
                     <h5><div align="center"><img src="https://img.icons8.com/material/48/000000/ok--v1.png"/>&nbsp&nbspRegistro Insertado</div></h5>
-                    <a type="button" class="btn btn-outline-primary btn-block" href="form2.php">Nuevo formulario RESISTENCIA DE CONCRETO</a>
-                    <a type="button" class="btn btn-outline-primary btn-block" href="form2_existente.php">NUEVA MUESTRA RESISTENCIA DE CONCRETO</a>
+                    <a type="button" class="btn btn-outline-primary btn-block" href="formRev.php">Nuevo formulario REVENIMIENTO</a>
+                    <a type="button" class="btn btn-outline-primary btn-block" href="formRev_existente.php">NUEVA MUESTRA REVENIMIENTO</a>
                 </div>
             </div>
         </div>

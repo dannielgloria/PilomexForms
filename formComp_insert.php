@@ -41,86 +41,86 @@
                 <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a href="form1.php" class="nav-link link-scroll">Revenimiento </a></li>
-                        <li class="nav-item"><a href="form2.php" class="nav-link link-scroll">Res Concreto</a></li>
+                        <li class="nav-item"><a href="formRev.php" class="nav-link link-scroll">Revenimiento </a></li>
+                        <li class="nav-item"><a href="formRes.php" class="nav-link link-scroll">Res Concreto</a></li>
                         <li class="nav-item"><a href="login.html" class="btn btn-outline-white nav-link ">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <!-- Formulario 1 (revendimiento) -->
+    <!-- Formulario 3 (Grado de compactación) -->
     <section id="revendimiento" style="background-color: #fff;" class="text-page pb-4">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="heading">REVENIMIENTO</h1>
+                    <h1 class="heading">GRADO DE COMPACTACIÓN</h1>
                     <?php
                     include("dbConfig.php");
-                    
-                    $folio_lib = $_POST ['folio_lib'];
+
+                    $folio_gc = $_POST ['folio_gc'];
                     $cliente = $_POST ['cliente'];
-                    $obra = $_POST ['obra'];
-                    $no_colado = $_POST ['no_colado'];
-                    $fecha_colado = $_POST ['fecha_colado'];
-                    $fecha_informe = $_POST ['fecha_informe'];
-                    $concretera = $_POST ['concretera'];
-                    $query= "INSERT INTO BASE_CONCRETOH VALUES ($folio_lib,'$cliente','$obra',$no_colado,$fecha_colado,$fecha_informe,'$concretera')";
-                    $resultado1 = mysqli_query($enlace, $query);
+                    $ubicacion = $_POST ['ubicacion'];
+                    $no_cala = $_POST ['no_cala'];
+                    if (!$no_cala){
+                        $no_cala = 0;
+                    }
+                    $de = $_POST ['de'];
+                    if (!$de){
+                        $de = 0;
+                    }
+                    $nivel = $_POST ['nivel'];
+                    if (!$nivel){
+                        $nivel = 0;
+                    }
+                    $compactacion_req = $_POST ['compactacion_req'];
+                    $fecha = $_POST ['fecha'];
+                    if (!$fecha){
+                        $fecha ='NULL';
+                    }
+                    $para_emplearse = $_POST ['para_emplearse'];
+                    if (!$para_emplearse){
+                        $para_emplearse = 0;
+                    }
+                    $query1= "INSERT INTO BASE_GRADOCOMPAC VALUES ('$folio_gc','$cliente','$ubicacion',$no_cala,'$de','$nivel','$compactacion_req','$fecha','$para_emplearse')";
+                    $resultado1 = mysqli_query($enlace, $query1);
                     
                     if(! $resultado1)
                     {
-                    die("<br> No fue posible insertar los datos en la tabla BASE_CONCRETOH."  );
+                    die("<br> No fue posible insertar los datos en la tabla base_gradocompac."  );
                     }
-                    $resistencia = $_POST ['resistencia'];
-                    $revenimiento = $_POST ['revenimiento_prom'];
-                    $volumen = $_POST ['volumen'];
-                    $agregado = $_POST ['agregado'];
-                    $equipo= $_POST ['equipo'];
-                    $vibrador = $_POST ['vibrador'];
-                    $aditivo = $_POST ['aditivo'];
-                    $tipo_agregado = $_POST ['tipo_agregado'];
-                    $query2= "INSERT INTO DATOS_PROYECTO VALUES ($resistencia,$revenimiento,$volumen,$agregado,'$equipo','$vibrador','$aditivo','$tipo_agregado')";
+                    $num_cala = $_POST ['num_cala'];
+                    $fecha = $_POST ['fecha'];
+                    $localizacion = $_POST ['localizacion'];
+                    $vol_sond = $_POST ['vol_sond'];
+                    $masa_humed= $_POST ['masa_humed'];
+                    $masa_vol = $_POST ['masa_vol'];
+                    $num_recip = $_POST ['num_recip'];
+                    $masa_recip = $_POST ['masa_recip'];
+                    $masa_mathum_tara = $_POST ['masa_mathum_tara'];
+                    $masa_matseco_tara = $_POST ['masa_matseco_tara'];
+                    $dif = $_POST ['dif'];
+                    $masa_matseco = $_POST ['masa_matseco'];
+                    $cont_agua = $_POST ['cont_agua'];
+                    $prof_sond = $_POST ['prof_sond'];
+                    $cont_agua_optima = $_POST ['cont_agua_optima'];
+                    $cont_agua_lugar = $_POST ['cont_agua_lugar'];
+                    $masa_vol_seca_max = $_POST ['masa_vol_seca_max'];
+                    $masa_vol_seca_lugar = $_POST ['masa_vol_seca_lugar'];
+                    $grado_compact = $_POST ['grado_compact'];
+                    $query2= "INSERT INTO CALA_COMPACTACION VALUES ('$num_cala','$fecha','$localizacion',$vol_sond,$masa_humed,'$masa_vol',$num_recip,$masa_recip,$masa_mathum_tara,$masa_matseco_tara,$dif,$masa_matseco,'$cont_agua',$prof_sond,'$cont_agua_optima','$cont_agua_lugar',$masa_vol_seca_max,$masa_vol_seca_lugar,'$grado_compact','$folio_gc')";
+                    
                     $resultado2 = mysqli_query($enlace, $query2);
                     
-                    if(! $resultado2)
+                    if(! $resultado2 )
                     {
-                    die("<br> No fue posible insertar los datos en la tabla DATOS_PROYECTO."  );
-                    }
-                    $llave_tabla = $_POST ['llave_tabla'];
-                    $folio_ch = $_POST ['folio_ch'];
-                    $edad = $_POST ['edad'];
-                    $diametro = $_POST ['diametro'];
-                    $area = $_POST ['area'];
-                    $fecha_colado = $_POST ['fecha_colado'];
-                    $fecha_ruptura = $_POST ['fecha_ruptura'];
-                    $peso = $_POST ['peso'];
-                    $query3= "INSERT INTO DATOS_ESPECIMEN VALUES ('$llave_tabla','$folio_ch',$edad,$diametro,$area,$ensaye,'$fecha_colado','$fecha_ruptura',$peso)";
-                    $resultado3 = mysqli_query($enlace, $query3);
-                    
-                    if(! $resultado3)
-                    {
-                    die("<br> No fue posible insertar los datos en la tabla DATOS_ESPECIMEN."  );
-                    }
-                    $llave_tabla = $_POST ['llave_tabla'];
-                    $folio_ch = $_POST ['folio_ch'];
-                    $prueba = $_POST ['prueba'];
-                    $edad = $_POST ['edad_ensayo'];
-                    $carga_rup = $_POST ['carga_rup'];
-                    $resistencia = $_POST ['resistencia'];
-                    $porc_resis = $_POST ['porc_resis'];
-                    $query4= "INSERT INTO DATOS_ENSAYO VALUES ('$llave_tabla','$folio_ch','$elem_colado',$muestra,$remision,$ensaye,'$revenimiento_muestra')";
-                    $resultado4 = mysqli_query($enlace, $query4);
-                    
-                    if(! $resultado4)
-                    {
-                    die("<br> No fue posible insertar los datos en la tabla DATOS_ENSAYO."  );
+                    die("No fue posible insertar los datos en cala_compactacion."  );
                     }
                     mysqli_close($enlace);
                     ?>
                     <h5><div align="center"><img src="https://img.icons8.com/material/48/000000/ok--v1.png"/>&nbsp&nbspRegistro Insertado</div></h5>
-                    <a type="button" class="btn btn-outline-primary btn-block" href="form1.php">Nuevo formulario REVENIMIENTO</a>
-                    <a type="button" class="btn btn-outline-primary btn-block" href="form1_existente.php">NUEVA MUESTRA REVENIMIENTO</a>
+                    <a type="button" class="btn btn-outline-primary btn-block" href="formComp.php">Nuevo formulario GRADO DE COMPACTACIÓN</a>
+                    <a type="button" class="btn btn-outline-primary btn-block" href="formComp_existente.php">NUEVA CALA de proyecto existente</a>
                 </div>
             </div>
         </div>
