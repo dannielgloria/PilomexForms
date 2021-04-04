@@ -43,8 +43,9 @@
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a href="formRev.php" class="nav-link link-scroll">Revenimiento </a></li>
-                        <li class="nav-item"><a href="formRes.php" class="nav-link link-scroll">Res Concreto</a></li>
-                        <li class="nav-item"><a href="#contact" class="btn btn-outline-white nav-link ">Cerrar sesión</a></li>
+                        <li class="nav-item"><a href="formRes.php" class="nav-link link-scroll">Resistencia de Concreto</a></li>
+                        <li class="nav-item"><a href="formComp.php" class="nav-link link-scroll">Grado de Compactación</a></li>
+                        <li class="nav-item" style="background-color: black"><a href="#contact" class="btn btn-outline-white nav-link" style="color: #fff">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>

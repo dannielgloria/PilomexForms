@@ -41,7 +41,7 @@
                 <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a href="formRes_tec.php" class="nav-link link-scroll">Resistencia de Concreto Nuevo</a></li>
+                        <li class="nav-item"><a href="formRes_tec.php" class="nav-link link-scroll">Nueva Resistencia de Concreto</a></li>
                         <li class="nav-item" style="background-color: black"><a href="login.html" class="btn btn-outline-white nav-link " style="color: #fff">Cerrar sesión</a></li>    
                     </ul>
                 </div>

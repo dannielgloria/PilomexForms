@@ -42,7 +42,7 @@
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a href="formRev_existente.php" class="nav-link link-scroll">Revenimiento Existente</a></li>
-                        <li class="nav-item"><a href="formRev_consulta.php" class="nav-link link-scroll">Consulta</a></li>
+                        <li class="nav-item"><a href="formRev_consulta.php" class="nav-link link-scroll">Consultar Revenimiento</a></li>
                         <li class="nav-item" style="background-color: black"><a href="login.html" class="btn btn-outline-white nav-link " style="color: #fff">Cerrar sesión</a></li>
                     </ul>
                 </div>
@@ -66,8 +66,7 @@
                     $fecha_colado = $_POST ['fecha_colado'];
                     $fecha_informe = $_POST ['fecha_informe'];
                     $concretera = $_POST ['concretera'];
-                    $observaciones = $_POST['observaciones'];
-                    $query = "INSERT INTO BASE_CONCRETOH VALUES ('$folio_ch', $folio_lib, '$cliente', '$obra', $no_colado ,'$fecha_colado', '$fecha_informe', '$concretera', '$observaciones')";
+                    $query = "INSERT INTO BASE_CONCRETOH VALUES ('$folio_ch', $folio_lib, '$cliente', '$obra', $no_colado ,'$fecha_colado', '$fecha_informe', '$concretera', NULL)";
                     echo $query;
                     $resultado1 = mysqli_query($enlace, $query);
                     

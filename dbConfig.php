@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "2133010323Gl?";
+$password = "Blink.1822";
 $dbname = "mydb";
 $enlace = mysqli_connect($servername,$username,$password,$dbname);//Conexion a BD
 if(!$enlace){

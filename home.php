@@ -89,11 +89,11 @@
                                 <div class="icon"><img src="https://img.icons8.com/fluent-systems-filled/48/000000/water-bottle.png" /></div>
                                 <h5>GRADO DE COMPACTACION</h5>
                                 <p>Descripción<br><br></p>
-                                <a type="button" class="btn btn-outline-primary btn-block" href="form3.php">Llenar formulario nuevo</a>
+                                <a type="button" class="btn btn-outline-primary btn-block" href="formComp.php">Llenar formulario nuevo</a>
                                 <br>
-                                <a type="button" class="btn btn-outline-primary btn-block" href="form3_existente.php">Llenar formulario existente</a>
+                                <a type="button" class="btn btn-outline-primary btn-block" href="formComp_existente.php">Llenar formulario existente</a>
                                 <br>
-                                <a type="button" class="btn btn-outline-primary btn-block" href="form3_consulta.php">CONSULTAR</a>
+                                <a type="button" class="btn btn-outline-primary btn-block" href="formComp_consulta.php">CONSULTAR</a>
                             </div>
                         </div>
                     </div>

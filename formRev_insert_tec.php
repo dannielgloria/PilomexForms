@@ -65,8 +65,7 @@
                     $fecha_colado = $_POST ['fecha_colado'];
                     $fecha_informe = $_POST ['fecha_informe'];
                     $concretera = $_POST ['concretera'];
-                    $observaciones = $_POST['observaciones'];
-                    $query = "INSERT INTO BASE_CONCRETOH VALUES ('$folio_ch', $folio_lib, '$cliente', '$obra', $no_colado ,'$fecha_colado', '$fecha_informe', '$concretera', '$observaciones')";
+                    $query = "INSERT INTO BASE_CONCRETOH VALUES ('$folio_ch', $folio_lib, '$cliente', '$obra', $no_colado ,'$fecha_colado', '$fecha_informe', '$concretera', NULL)";
                     echo $query;
                     $resultado1 = mysqli_query($enlace, $query);
                     

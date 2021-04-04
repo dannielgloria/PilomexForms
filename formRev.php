@@ -217,10 +217,10 @@
                                 </div>
                             </div>
                             <br>
-                            <h5>OBSERVACIONES</h5>
+<!--                             <h5>OBSERVACIONES</h5>
                             <div class="form-group">
                                 <textarea rows="4" name="observaciones" id="observaciones" placeholder="Ingrese su mensaje" required="required" class="form-control"></textarea>
-                            </div>
+                            </div> -->
                             <div class="text-center">
                                 <input type="submit" value="Guardar" class="btn btn-outline-primary btn-block">
                             </div>
